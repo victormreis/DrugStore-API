@@ -40,21 +40,21 @@ public class ProductsController {
 		return ResponseEntity.ok(repository.findAllByNameContainingIgnoreCase(name));
 
 	}
-	
+
 	@PostMapping
-	public ResponseEntity<Products> post (@RequestBody Products products){
+	public ResponseEntity<Products> post(@RequestBody Products products) {
 		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(products));
 	}
-	
+
 	@PutMapping
-	public ResponseEntity<Products> put (@RequestBody Products products){
+	public ResponseEntity<Products> put(@RequestBody Products products) {
 		return ResponseEntity.status(HttpStatus.OK).body(repository.save(products));
 	}
-	
-	@DeleteMapping ("{id}")
-	public void delete (@PathVariable Long id){
+
+	@DeleteMapping("{id}")
+	public void delete(@PathVariable Long id) {
 		repository.deleteById(id);
-		
+
 	}
 
 }

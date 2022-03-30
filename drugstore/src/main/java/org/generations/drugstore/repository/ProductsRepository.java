@@ -10,6 +10,4 @@ import org.springframework.stereotype.Repository;
 public interface ProductsRepository extends JpaRepository<Products, Long> {
 	public List<Products> findAllByNameContainingIgnoreCase(String name);
 
-
-
 }

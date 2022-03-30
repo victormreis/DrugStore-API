@@ -24,12 +24,10 @@ public class Products {
 	@NotNull
 	private String description;
 	@NotNull
-	private int quantidade;	
+	private int quantidade;
 	@ManyToOne
 	@JsonIgnoreProperties("products")
 	private Category category;
-	
-	
 
 	public int getQuantidade() {
 		return quantidade;

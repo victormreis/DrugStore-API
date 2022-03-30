@@ -14,16 +14,16 @@ import javax.validation.constraints.NotNull;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
-@Table (name = "tb_category")
+@Table(name = "tb_category")
 public class Category {
-	
+
 	@Id
-	@GeneratedValue (strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	@NotNull
 	private String type;
-	
+
 	@OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("category")
 	private List<Products> products;
@@ -51,8 +51,5 @@ public class Category {
 	public void setProducts(List<Products> products) {
 		this.products = products;
 	}
-	
-	
-	
 
 }
