@@ -23,9 +23,21 @@ public class Products {
 	private double price;
 	@NotNull
 	private String description;
+	@NotNull
+	private int quantidade;	
 	@ManyToOne
 	@JsonIgnoreProperties("products")
 	private Category category;
+	
+	
+
+	public int getQuantidade() {
+		return quantidade;
+	}
+
+	public void setQuantidade(int quantidade) {
+		this.quantidade = quantidade;
+	}
 
 	public Long getId() {
 		return id;
